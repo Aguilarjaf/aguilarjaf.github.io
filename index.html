@@ -52,10 +52,10 @@
                     lastUpdated = parsed_data.lastUpdatedDate;
                     // window.location.href = "output.html";
 
-                    document.getElementById("completed-vaccines").innerHTML = "Completed vaccines: " + completedVaccines;
-                    document.getElementById("total-population").innerHTML = "Total population: " + population;
-                    document.getElementById("percentage-vaxxed").innerHTML = "Percentage vaccinated: " + Math.round((completedVaccines / population) * 100) + "%";
-                    document.getElementById("last-updated").innerHTML = "Last updated: " + lastUpdated;
+                    document.getElementById("completed-vaccines").innerHTML = "<b>Completed vaccines: </b>" + completedVaccines;
+                    document.getElementById("total-population").innerHTML = "<b>Total population: </b>" + population;
+                    document.getElementById("percentage-vaxxed").innerHTML = "<b>Percentage vaccinated: </b>" + Math.round((completedVaccines / population) * 100) + "%";
+                    document.getElementById("last-updated").innerHTML = "<b>Last updated: </b>" + lastUpdated;
                 })
                 .catch((error_data) => { console.log(error_data) })
                 ;
@@ -126,17 +126,17 @@
             </form>
         </div>
 
-        <div class="row justify-content-center">
-            <h2 id="completed-vaccines" class="covid-data"></h2>
+        <div class="row d-flex justify-content-center">
+            <p id="completed-vaccines" class="covid-data"></p>
         </div>
-        <div class="row justify-content-center">
-            <h3 id="total-population" class="covid-data"></h3>
+        <div class="row d-flex justify-content-center">
+            <p id="total-population" class="covid-data"></p>
         </div>
-        <div class="row justify-content-center">
-            <h3 id="percentage-vaxxed" class="covid-data"></h3>
+        <div class="row d-flex justify-content-center">
+            <p id="percentage-vaxxed" class="covid-data"></p>
         </div>
-        <div class="row justify-content-center">
-            <h3 id="last-updated" class="covid-data"></h3>
+        <div class="row d-flex justify-content-center">
+            <p id="last-updated" class="covid-data"></p>
         </div>
 
     </div>

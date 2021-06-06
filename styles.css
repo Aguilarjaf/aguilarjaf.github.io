@@ -115,4 +115,5 @@ form.example::after {
 .covid-data {
   color: white;
   text-align: center !important;
+  font-size: 25px;
 }
