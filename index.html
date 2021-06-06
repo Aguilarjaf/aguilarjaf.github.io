@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" -->
+        <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -45,12 +46,13 @@
 
                     document.getElementById("completed-vaccines").innerHTML = "Completed vaccines: " + completedVaccines;
                     document.getElementById("total-population").innerHTML = "Total population: " + population;
+                    document.getElementById("percentage-vaxxed").innerHTML = "Percentage vaccinated: " + Math.round((completedVaccines / population) * 100) + "%";
                     document.getElementById("last-updated").innerHTML = "Last updated: " + lastUpdated;
                 })
                 .catch((error_data) => { console.log(error_data) })
                 ;
 
-                return false;
+            return false;
 
             // Example API: https://api.covidactnow.org/v2/state/WA.json?apiKey=5fa78316f332478cbc3c19d10b6edb63
             // const stateAbbrev = req.body.stateName;
@@ -82,7 +84,7 @@
     </script>
 
     <!-- Rendering content below -->
-    <div class="container-fluid hero-image">
+    <div class="hero-image">
         <div class="hero-text">
             <h1>Find Covid Vaccinations by State</h1>
             <form class="example" onsubmit="return performCovidQuery()">
@@ -93,10 +95,10 @@
 
             <!-- <button class="blue-button" onclick="performCovidQuery()">Search <i class="fa fa-search"></i></button> -->
 
-            <h1 id="completed-vaccines" class="info-label"></h1>
-            <h1 id="total-population" class="info-label"></h1>
-            <h1 id="percentage-vaxxed" class="info-label"></h1>
-            <h2 id="last-updated" class="info-label"></h2>
+            <h2 id="completed-vaccines" class="info-label"></h2>
+            <h3 id="total-population" class="info-label"></h3>
+            <h3 id="percentage-vaxxed" class="info-label"></h3>
+            <h3 id="last-updated" class="info-label"></h3>
 
         </div>
     </div>
