@@ -9,6 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,7 +25,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="text-center">
     <script>
 
         let population = null;
@@ -84,26 +92,54 @@
     </script>
 
     <!-- Rendering content below -->
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>Find Covid Vaccinations by State</h1>
-            <form class="example" onsubmit="return performCovidQuery()">
-                <!--label for="stateInput">State Name (Abbreviation): </label -->
-                <input id="stateInput" type="text" name="stateName" placeholder="State Name (Abbreviation)">
-                <input type="button" class="blue-button" value="Search Now" onclick="return performCovidQuery()">
+    <!-- <div class="hero-image"> -->
+    <!-- <div class="hero-text"> -->
+    <!-- <h1>Find Covid Vaccinations by State</h1> -->
+    <!-- <form class="example" onsubmit="return performCovidQuery()"> -->
+    <!--label for="stateInput">State Name (Abbreviation): </label -->
+    <!-- <input id="stateInput" type="text" name="stateName" placeholder="State Name (Abbreviation)"> -->
+    <!-- <input type="button" class="blue-button" value="Search Now" onclick="return performCovidQuery()"> -->
+    <!-- </form> -->
+
+    <!-- <button class="blue-button" onclick="performCovidQuery()">Search <i class="fa fa-search"></i></button> -->
+
+    <!-- <h2 id="completed-vaccines" class="info-label"></h2> -->
+    <!-- <h3 id="total-population" class="info-label"></h3> -->
+    <!-- <h3 id="percentage-vaxxed" class="info-label"></h3> -->
+    <!-- <h3 id="last-updated" class="info-label"></h3> -->
+
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <div class="content">
+        <div class="row">
+            <form class="form-signin" onsubmit="return performCovidQuery()">
+                <img class="mb-4" src="vac-icon.png" alt="" width="150" height="150">
+                <h1 class="h3 mb-3 font-weight-normal" style="color:white;">Find Covid Vaccinations by State</h1>
+                <input type="text" id="stateInput" class="form-control" name="stateName"
+                    placeholder="State Abbreviation" required autofocus>
+                <!-- <input type="button" class="blue-button" value="Search Now" onclick="return performCovidQuery()"> -->
+                <button class="btn btn-lg btn-primary btn-block" type="button"
+                    onclick="return performCovidQuery()">Search
+                    Now</button>
+                <p class="mt-5 mb-3 text-muted" style="color:white !important;">Powered by <a href="https://covidactnow.org/?s=1898818">CovidActNow.org</a></p>
             </form>
-
-            <!-- <button class="blue-button" onclick="performCovidQuery()">Search <i class="fa fa-search"></i></button> -->
-
-            <h2 id="completed-vaccines" class="info-label"></h2>
-            <h3 id="total-population" class="info-label"></h3>
-            <h3 id="percentage-vaxxed" class="info-label"></h3>
-            <h3 id="last-updated" class="info-label"></h3>
-
         </div>
+
+        <div class="row justify-content-center">
+            <h2 id="completed-vaccines" class="covid-data"></h2>
+        </div>
+        <div class="row justify-content-center">
+            <h3 id="total-population" class="covid-data"></h3>
+        </div>
+        <div class="row justify-content-center">
+            <h3 id="percentage-vaxxed" class="covid-data"></h3>
+        </div>
+        <div class="row justify-content-center">
+            <h3 id="last-updated" class="covid-data"></h3>
+        </div>
+
     </div>
-
-
 
 </body>
 
