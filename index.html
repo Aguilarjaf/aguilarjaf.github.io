@@ -14,17 +14,65 @@
 </head>
 
 <body>
+    <script>
+        function performCovidQuery() {
+            fetch("https://api.covidactnow.org/v2/state/WA.json?apiKey=5fa78316f332478cbc3c19d10b6edb63")
+            .then((response_data) => { 
+                console.log(response_data) 
+                return response_data.json();
+                // response_data.json().then((extra_data) => console.log(extra_data));
+                // console.log(parsed_data);
+            })
+            .then(parsed_data => {
+                console.log(parsed_data);
+                window.location.href = "output.html";
+            })
+            .catch((error_data) => { console.log(error_data) })
+            ;
 
+            // Example API: https://api.covidactnow.org/v2/state/WA.json?apiKey=5fa78316f332478cbc3c19d10b6edb63
+            // const stateAbbrev = req.body.stateName;
+            // const apiKey = "5fa78316f332478cbc3c19d10b6edb63";
+            // const url = "https://api.covidactnow.org/v2/state/" + stateAbbrev + ".json?apiKey=" + apiKey;
+
+            // https.get(url, (response) => {
+            //     response.on("data", (data) => {
+            //         const covidData = JSON.parse(data);
+            //         const completedVaccines = covidData.actuals.vaccinationsCompleted;
+            //         const totalPopulation = covidData.population;
+            //         const lastUpdated = covidData.lastUpdatedDate;
+
+            //         const percentVac = completedVaccines / totalPopulation;
+            //         const formattedPercentage = Math.round(percentVac * 100);
+
+            //         res.write("<h1>Completed vaccines in " + stateAbbrev + ": " + completedVaccines + "</h1>");
+            //         res.write("<h1>Total Population: " + totalPopulation + "</h1>");
+            //         res.write("<h1>Percentage Vaxxed: " + formattedPercentage + "%</h1>");
+            //         res.write("<h2>Last updated on: " + lastUpdated + "</h2>");
+            //         res.send();
+
+            //     });
+            // });
+        };
+
+
+    </script>
+
+    <!-- Rendering content below -->
     <div class="hero-image">
         <div class="hero-text">
             <h1>Find Covid Vaccinations by State</h1>
-            <form class="example" action="/" method="POST">
+            <form class="example">
                 <!--label for="stateInput">State Name (Abbreviation): </label -->
                 <input id="stateInput" type="text" name="stateName" placeholder="State Name (Abbreviation)">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                
             </form>
+
+            <button onclick="performCovidQuery()"><i class="fa fa-search"></i>search</button>
         </div>
     </div>
+
+
 
 </body>
 
