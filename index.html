@@ -34,7 +34,7 @@
 
         function performCovidQuery() {
 
-            let stateAbbrev = document.getElementById("stateInput").value;
+            let stateAbbrev = document.getElementById("stateInput").value.toUpperCase();
             console.log(stateAbbrev);
 
             fetch("https://api.covidactnow.org/v2/state/" + stateAbbrev + ".json?apiKey=5fa78316f332478cbc3c19d10b6edb63")
@@ -91,27 +91,10 @@
 
     </script>
 
-    <!-- Rendering content below -->
-    <!-- <div class="hero-image"> -->
-    <!-- <div class="hero-text"> -->
-    <!-- <h1>Find Covid Vaccinations by State</h1> -->
-    <!-- <form class="example" onsubmit="return performCovidQuery()"> -->
-    <!--label for="stateInput">State Name (Abbreviation): </label -->
-    <!-- <input id="stateInput" type="text" name="stateName" placeholder="State Name (Abbreviation)"> -->
-    <!-- <input type="button" class="blue-button" value="Search Now" onclick="return performCovidQuery()"> -->
-    <!-- </form> -->
-
-    <!-- <button class="blue-button" onclick="performCovidQuery()">Search <i class="fa fa-search"></i></button> -->
-
-    <!-- <h2 id="completed-vaccines" class="info-label"></h2> -->
-    <!-- <h3 id="total-population" class="info-label"></h3> -->
-    <!-- <h3 id="percentage-vaxxed" class="info-label"></h3> -->
-    <!-- <h3 id="last-updated" class="info-label"></h3> -->
-
-    <!-- </div> -->
-    <!-- </div> -->
 
     <div class="content">
+        
+        <!-- State name form -->
         <div class="row">
             <form class="form-signin" onsubmit="return performCovidQuery()">
                 <img class="mb-4" src="vac-icon.png" alt="" width="150" height="150">
@@ -122,10 +105,11 @@
                 <button class="btn btn-lg btn-primary btn-block" type="button"
                     onclick="return performCovidQuery()" style="margin-top: 10px;">Search
                     Now</button>
-                <p class="mt-5 mb-3 text-muted" style="color:white !important;">Powered by <a href="https://covidactnow.org/?s=1898818">CovidActNow.org</a></p>
+                <p class="mt-2 mb-3 text-muted" style="color:white !important;">Powered by <a href="https://covidactnow.org/?s=1898818">CovidActNow.org</a></p>
             </form>
         </div>
 
+        <!-- Covid data fields -->
         <div class="row d-flex justify-content-center">
             <p id="completed-vaccines" class="covid-data"></p>
         </div>
