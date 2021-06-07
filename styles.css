@@ -116,6 +116,8 @@ form.example::after {
   color: white;
   text-align: center !important;
   font-size: 25px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .rotate {

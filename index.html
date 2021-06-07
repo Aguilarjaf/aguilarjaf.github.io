@@ -37,6 +37,12 @@
             // Spinning covid icon
             document.getElementById("covid-icon").style.display = "none";
 
+            // Simulates refresh of covid data
+            document.getElementById("completed-vaccines").innerHTML = "";
+            document.getElementById("total-population").innerHTML = "";
+            document.getElementById("percentage-vaxxed").innerHTML = "";
+            document.getElementById("last-updated").innerHTML = "";
+
             // Get the state abbreviation input
             let stateAbbrev = document.getElementById("stateInput").value.toUpperCase();
             console.log(stateAbbrev);
@@ -97,7 +103,7 @@
 
 
     <div class="content">
-        
+
         <!-- State name form -->
         <div class="row">
             <form class="form-signin" onsubmit="return performCovidQuery()">
@@ -106,10 +112,11 @@
                 <input type="text" id="stateInput" class="form-control" name="stateName"
                     placeholder="State Abbreviation" required autofocus>
                 <!-- <input type="button" class="blue-button" value="Search Now" onclick="return performCovidQuery()"> -->
-                <button class="btn btn-lg btn-primary btn-block" type="button"
-                    onclick="return performCovidQuery()" style="margin-top: 10px;">Search
+                <button class="btn btn-lg btn-primary btn-block" type="button" onclick="return performCovidQuery()"
+                    style="margin-top: 10px;">Search
                     Now</button>
-                <p class="mt-2 mb-3 text-muted" style="color:white !important;">Powered by <a href="https://covidactnow.org/?s=1898818">CovidActNow.org</a></p>
+                <p class="mt-2 mb-3 text-muted" style="color:white !important;">Powered by <a
+                        href="https://covidactnow.org/?s=1898818">CovidActNow.org</a></p>
             </form>
         </div>
 
@@ -117,16 +124,16 @@
         <img class="rotate" src="covid.png" id="covid-icon" width="150" height="150">
 
         <!-- Covid data fields -->
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center refresh-items">
             <p id="completed-vaccines" class="covid-data"></p>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center refresh-items">
             <p id="total-population" class="covid-data"></p>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center refresh-items">
             <p id="percentage-vaxxed" class="covid-data"></p>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center refresh-items">
             <p id="last-updated" class="covid-data"></p>
         </div>
 
