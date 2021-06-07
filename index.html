@@ -102,13 +102,16 @@
 
             if (stateAbbrev.length > 3) {
                 for (i = 0; i < states.length; i++) {
-                    if(states[i][0].toUpperCase() == stateAbbrev)
+                    if (states[i][0].toUpperCase() == stateAbbrev)
                         stateAbbrev = states[i][1];
+                    else
+                        alert("Data for this state does not exist.");
+
                 }
             } else if (stateAbbrev.length == 2) {
                 stateAbbrev = stateAbbrev;
             } else {
-                alert("This state does not exist.");
+                alert("Data for this state does not exist.");
             }
 
 
@@ -175,8 +178,8 @@
             <form class="form-signin" onsubmit="return performCovidQuery()">
                 <img class="mb-4" src="vac-icon.png" alt="" width="150" height="150">
                 <h1 class="h3 mb-3 font-weight-normal" style="color:white;"><b>Find Covid Vaccinations by State</b></h1>
-                <input type="text" id="stateInput" class="form-control" name="stateName"
-                    placeholder="State Name" required autofocus>
+                <input type="text" id="stateInput" class="form-control" name="stateName" placeholder="State Name"
+                    required autofocus>
                 <!-- <input type="button" class="blue-button" value="Search Now" onclick="return performCovidQuery()"> -->
                 <button class="btn btn-lg btn-primary btn-block" type="button" onclick="return performCovidQuery()"
                     style="margin-top: 10px;">Search
