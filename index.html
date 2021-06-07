@@ -34,6 +34,10 @@
 
         function performCovidQuery() {
 
+            // Spinning covid icon
+            document.getElementById("covid-icon").style.display = "none";
+
+            // Get the state abbreviation input
             let stateAbbrev = document.getElementById("stateInput").value.toUpperCase();
             console.log(stateAbbrev);
 
@@ -108,6 +112,9 @@
                 <p class="mt-2 mb-3 text-muted" style="color:white !important;">Powered by <a href="https://covidactnow.org/?s=1898818">CovidActNow.org</a></p>
             </form>
         </div>
+
+        <!-- Spinning covid icion -->
+        <img class="rotate" src="covid.png" id="covid-icon" width="150" height="150">
 
         <!-- Covid data fields -->
         <div class="row d-flex justify-content-center">
