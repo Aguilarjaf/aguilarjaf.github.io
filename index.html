@@ -102,12 +102,14 @@
 
             if (stateAbbrev.length > 3) {
                 for (i = 0; i < states.length; i++) {
-                    if (states[i][0].toUpperCase() == stateAbbrev)
+                    if (states[i][0].toUpperCase() == stateAbbrev) {
                         stateAbbrev = states[i][1];
-                    else
-                        alert("Data for this state does not exist.");
-
+                        break;
+                    }
                 }
+
+                alert("Data for this state does not exist.");
+
             } else if (stateAbbrev.length == 2) {
                 stateAbbrev = stateAbbrev;
             } else {
