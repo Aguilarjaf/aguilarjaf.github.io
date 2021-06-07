@@ -101,6 +101,7 @@
             console.log(stateAbbrev);
 
             if (stateAbbrev.length > 3) {
+                
                 for (i = 0; i < states.length; i++) {
                     if (states[i][0].toUpperCase() == stateAbbrev) {
                         stateAbbrev = states[i][1];
@@ -108,7 +109,8 @@
                     }
                 }
 
-                alert("Data for this state does not exist.");
+                if (i == states.length)
+                    alert("Data for this state does not exist.");
 
             } else if (stateAbbrev.length == 2) {
                 stateAbbrev = stateAbbrev;
