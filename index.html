@@ -97,9 +97,10 @@
             document.getElementById("last-updated").innerHTML = "";
 
             // Get the state abbreviation input
-            let stateAbbrev = document.getElementById("stateInput").value.toUpperCase();
+            let stateAbbrev = document.getElementById("stateInput").value.toUpperCase().trim();
             console.log(stateAbbrev);
 
+            // Handles invalid input
             if (stateAbbrev.length > 3) {
                 
                 for (i = 0; i < states.length; i++) {
@@ -119,7 +120,7 @@
             }
 
 
-
+            // Retrieves data from API
             fetch("https://api.covidactnow.org/v2/state/" + stateAbbrev + ".json?apiKey=5fa78316f332478cbc3c19d10b6edb63")
                 .then((response_data) => {
                     console.log(response_data)
