@@ -117,13 +117,16 @@
                     }
                 }
 
-                if (i == states.length)
+                if (i == states.length) {
                     alert("Data for this state does not exist.");
+                    document.getElementById("covid-icon").style.display = "block";
+                }
 
             } else if (stateAbbrev.length == 2) {
                 stateAbbrev = stateAbbrev;
             } else {
                 alert("Data for this state does not exist.");
+                document.getElementById("covid-icon").style.display = "block";
             }
 
 
@@ -204,7 +207,9 @@
         </div>
 
         <!-- Spinning covid icion -->
-        <img class="rotate" src="covid.png" id="covid-icon" width="150" height="150">
+        <div class="row d-flex justify-content-center">
+            <img class="rotate" src="covid.png" id="covid-icon" width="150" height="150">
+        </div>
 
         <!-- Covid data fields -->
         <div class="row d-flex justify-content-center refresh-items">
