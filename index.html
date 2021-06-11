@@ -85,6 +85,10 @@
             ['Wyoming', 'WY'],
         ];
 
+        function refresh() {
+            window.location.reload("Refresh")
+        }
+
         function performCovidQuery() {
 
             // Spinning covid icon
@@ -102,7 +106,7 @@
 
             // Handles invalid input
             if (stateAbbrev.length > 3) {
-                
+
                 for (i = 0; i < states.length; i++) {
                     if (states[i][0].toUpperCase() == stateAbbrev) {
                         stateAbbrev = states[i][1];
@@ -143,6 +147,8 @@
                 })
                 .catch((error_data) => { console.log(error_data) })
                 ;
+
+            document.getElementById("refresh-button").style.display = "block";
 
             return false;
 
@@ -209,6 +215,12 @@
         </div>
         <div class="row d-flex justify-content-center refresh-items">
             <p id="last-updated" class="covid-data"></p>
+        </div>
+
+        <div class="row d-flex justify-content-center refresh-items">
+            <p id="refresh-button" style="display: none;">
+                <button class="btn btn-lg btn-secondary btn-block" type="button" onClick="refresh(this)">Reset Data</button>
+            </p>
         </div>
 
     </div>
